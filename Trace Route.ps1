@@ -1,2 +1,2 @@
-$IP = '68.15.183.45' #Enter IP of Destination - Variable
-Test-NetConnection $IP -TraceRoute | Select -ExpandProperty TraceRoute | % { Resolve-DnsName $_ -type PTR -ErrorAction SilentlyContinue }
+$dest = 'google.com' #Enter Address or IP of Destination - Variable
+Test-NetConnection $dest -TraceRoute | Select-Object -ExpandProperty TraceRoute | ForEach-Object { Resolve-DnsName $_ -type PTR -ErrorAction SilentlyContinue }
