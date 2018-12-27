@@ -2,16 +2,16 @@
 Import-Module ActiveDirectory
 
 #Set New User Information
-$Username = 'kmuhota'
-$Password = '3gc#6nuQNdss'
-$FirstName = 'Kim'
-$LastName = 'Muhota'
-$Email = 'kmuhota@ssaandco.com'
-$Title = 'Senior Director'
-$Phone = '703-655-7561'
-$Office = 'Remote'
-$Company = 'SSA & Company'
-$OU = 'OU=Six Sigma Employees,DC=sigma,DC=com'
+$Username = 'vtopouria'
+$Password = 'xyDqlQH3K@d3'
+$FirstName = 'Victor'
+$LastName = 'Topouria'
+$Email = 'vtopouria@highlanterngroup.com'
+$Title = 'Strategy & Communications Intern'
+$Phone = '323-300-8327'
+$Office = 'LA'
+$Company = 'High Lantern Group'
+$OU = 'OU=HLG Contractors,OU=Highlantern Group Employees,DC=sigma,DC=com'
 
 if (Get-ADUser -F {SamAccountName -eq $UserName})
 {
