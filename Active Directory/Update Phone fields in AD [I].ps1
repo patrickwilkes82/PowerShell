@@ -2,7 +2,7 @@
 Import-Module ActiveDirectory
 
 #Set Path of CSV
-$USERS = Import-CSV "C:\Users\admin.onepath\Desktop\Update AD User Info\AllCompanyUpdate.csv"
+$USERS = Import-CSV "C:\Users\admin.onepath\Desktop\Update AD User Info\UpdateADUser12282018.csv"
 
 ForEach($U in $USERS)
 {
@@ -13,9 +13,9 @@ ForEach($U in $USERS)
         Set-ADUser -Identity $U.SamAccountName -MobilePhone $U.Mobile
     }
     If($null -ne $U.IpPhone) {
-        Set-ADUser -Identity $U.SamAccountName -Replace @{IpPhone = $U.IpPhone}
+        Set-ADUser -Identity $U.SamAccountName -Replace @{Department = $U.IpPhone}
     }
-    Set-ADUSer -Identity $U.SamAccountName -OfficePhone $U.TelephoneNumber -MobilePhone $U.Mobile -Company $U.Company -Office $U.Office -Title $U.Title -Replace @{IpPhone = $U.IpPhone}
+    Set-ADUSer -Identity $U.SamAccountName -OfficePhone $U.TelephoneNumber -MobilePhone $U.Mobile -Company $U.Company -Office $U.Office -Title $U.Title -Replace @{Department = $U.IpPhone}
 }
 
 
