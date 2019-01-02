@@ -6,4 +6,9 @@ $name = '' #Only used for remote computers
 $newname = $sn, '-', $company -Join ''
 
 # ***EXECUTION***
-Add-Computer -DomainName $domain -ComputerName $name -NewName $newname
+try {
+        Add-Computer -DomainName $domain -ComputerName $name -NewName $newname
+    }
+catch {
+    'An Error Occurred'
+}
