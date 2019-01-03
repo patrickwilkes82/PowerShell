@@ -2,16 +2,17 @@
 Import-Module ActiveDirectory
 
 #Set New User Information
-$Username = 'vtopouria'
-$Password = 'xyDqlQH3K@d3'
-$FirstName = 'Victor'
-$LastName = 'Topouria'
-$Email = 'vtopouria@highlanterngroup.com'
-$Title = 'Strategy & Communications Intern'
-$Phone = '323-300-8327'
-$Office = 'LA'
-$Company = 'High Lantern Group'
-$OU = 'OU=HLG Contractors,OU=Highlantern Group Employees,DC=sigma,DC=com'
+$Username = 'sweiss'
+$Password = '9#VSLoX^!sq^'
+$FirstName = 'Shari'
+$LastName = 'Weiss'
+$Email = 'sweiss@g100.com'
+$Title = 'Business Development Coordinator'
+$Phone = '212-899-6830'
+$Department = 'Ext 16830'
+$Office = 'NY'
+$Company = 'G100 Network'
+$OU = 'OU=G100 Employees,DC=sigma,DC=com'
 
 if (Get-ADUser -F {SamAccountName -eq $UserName})
 {
@@ -31,6 +32,7 @@ else
     -Title $Title `
     -Description $Title `
     -Office $Office `
+    -Department $Department `
     -Company $Company `
     -PasswordNeverExpires $true `
     -Enabled $true `
