@@ -5,7 +5,7 @@ Import-PSSession $Session
 
 # ***VARIABLES***
 $mailbox = 'pfincher@highlanterngroup.com' #Mailbox being converted
-$type = 'Shared' #Type of mailbox desired [Shared or Regular]
+$type = 'Shared' #Type of mailbox desired [Regular, Shared, Room, Equipment]
 
 try 
 {
@@ -16,3 +16,7 @@ catch
 {
     Write-Host "Unable to convert $mailbox to $type Mailbox. Please check for any spelling errors." -ForegroundColor Yellow
 }
+
+# ***Verify Mailbox Type
+
+Get-Mailbox -Identity $mailbox | Format-List RecipientTypeDetails
