@@ -14,5 +14,5 @@ try
 }
 catch 
 {
-    Write-Host "Unable to convert $mailbox to $type Mailbox" -ForegroundColor Yellow
+    Write-Host "Unable to convert $mailbox to $type Mailbox. Please check for any spelling errors." -ForegroundColor Yellow
 }
