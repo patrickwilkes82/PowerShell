@@ -4,7 +4,7 @@ $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri ht
 Import-PSSession $Session
 
 # ***VARIABLES***
-$mailbox = 'pfincher@highlanterngroup.com' #Mailbox being converted
+$mailbox = 'wlerner@highlanterngroup.com' #Mailbox being converted
 $type = 'Shared' #Type of mailbox desired [Regular, Shared, Room, Equipment]
 
 try 

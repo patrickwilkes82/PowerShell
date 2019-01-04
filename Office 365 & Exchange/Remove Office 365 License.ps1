@@ -6,15 +6,21 @@ Import-PSSession $Session
 Connect-MsolService
 
 # ***VARIABLES***
-$mailbox = 'pfincher@highlanterngroup.com'
+$mailbox = 'akohler@ssaandco.com'
+
+# ***Execute***
 
 try {
     (Get-MsolUser -UserPrincipalName $mailbox -ErrorAction Stop ).licenses.AccountSkuID |
     ForEach-Object {
         Set-MsolUserLicense -UserPrincipalName $mailbox -RemoveLicenses $_
+        Set-MsolUser -UserPrincipalName $mailbox -BlockCredential $true
         Write-Host "Successfully removed licenses from $mailbox mailbox." -ForegroundColor Green
     }
 }
 catch {
     Write-Host "Unable to remove license from $mailbox mailbox." -ForegroundColor Yellow
 } 
+
+# ***Verify licenses have been Removed and sign in blocked***
+Get-MsolUser -UserPrincipalName $mailbox | Format-List DisplayName,Licenses
