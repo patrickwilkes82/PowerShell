@@ -6,7 +6,7 @@ Import-PSSession $Session
 Connect-MsolService
 
 # ***VARIABLES***
-$mailbox = 'wlerner@highlanterngroup.com'
+$mailbox = Read-Host 'Enter Email Address'
 
 # ***Execute***
 

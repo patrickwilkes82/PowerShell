@@ -14,9 +14,13 @@ Get-MailboxFolderPermission -Identity $mailbox -user $user
 # ***ADD Permissions if none exists***
 Add-MailboxFolderPermission -Identity $mailbox -user $user -AccessRights $rights
 
-# ***SET Permissions if other permission already exists
+# ***SET Permissions if other permission already exists***
 Set-MailboxFolderPermission -Identity $mailbox -user $user -AccessRights $rights
 
 
-# ***DELETE Permissions to mailbox
+# ***DELETE Permissions to mailbox***
 Remove-MailboxFolderPermission -Identity $mailbox -user $user 
+
+
+# ***SET Email Forwarding***
+Set-Mailbox -Identity $mailbox -ForwardingAddress $user

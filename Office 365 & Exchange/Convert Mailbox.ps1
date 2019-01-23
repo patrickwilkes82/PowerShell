@@ -1,11 +1,11 @@
-# ***Connect to Office 365***
+﻿# ***Connect to Office 365***
 $Creds = Get-Credential "admin.onepath@g100companies.com"
 $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.outlook.com/powershell/ -Credential $Creds -Authentication Basic –AllowRedirection
 Import-PSSession $Session
 
 # ***VARIABLES***
-$mailbox = 'wlerner@highlanterngroup.com' #Mailbox being converted
-$type = 'Shared' #Type of mailbox desired [Regular, Shared, Room, Equipment]
+$mailbox = Read-Host 'Enter Mailbox to be Converted' #Mailbox being converted
+$type = Read-Host 'Enter Type of Mailbox to Convert too' #Type of mailbox desired [Regular, Shared, Room, Equipment]
 
 try 
 {
@@ -18,5 +18,5 @@ catch
 }
 
 # ***Verify Mailbox Type
-
+Start-Sleep -s 5
 Get-Mailbox -Identity $mailbox | Format-List RecipientTypeDetails
