@@ -2,20 +2,23 @@
 Import-Module ActiveDirectory
 
 #Set Path of CSV
-$USERS = Import-CSV "C:\Users\admin.onepath\Desktop\Update AD User Info\UpdateADUser12282018.csv"
+$USERS = Import-CSV "C:\Users\admin.onepath\Desktop\Update AD User Info\UpdateAD_Addresses.csv"
 
 ForEach($U in $USERS)
 {
-    If($null -ne $U.TelephoneNumber) {
-        Set-ADUser -Identity $U.SamAccountName -OfficePhone $U.TelephoneNumber
+    If($null -ne $U.StreetAddress) {
+        Set-ADUser -Identity $U.SamAccountName -StreetAddress $U.StreetAddress
     }
-    If($null -ne $U.Mobile) {
-        Set-ADUser -Identity $U.SamAccountName -MobilePhone $U.Mobile
+    If($null -ne $U.City) {
+        Set-ADUser -Identity $U.SamAccountName -MobilePhone $U.City
     }
-    If($null -ne $U.IpPhone) {
-        Set-ADUser -Identity $U.SamAccountName -Replace @{Department = $U.IpPhone}
+    If($null -ne $U.State) {
+        Set-ADUser -Identity $U.SamAccountName -State $U.State
     }
-    Set-ADUSer -Identity $U.SamAccountName -OfficePhone $U.TelephoneNumber -MobilePhone $U.Mobile -Company $U.Company -Office $U.Office -Title $U.Title -Replace @{Department = $U.IpPhone}
+    If($null -ne $U.PostalCode) {
+        Set-ADUser -Identity $U.SamAccountName -PostalCode $U.PostalCode
+    }
+    Set-ADUSer -Identity $U.SamAccountName -StreetAddress $U.StreetAddress -City $U.City -State $U.State -PostalCode $U.PostalCode
 }
 
 

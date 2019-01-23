@@ -2,17 +2,17 @@
 Import-Module ActiveDirectory
 
 #Set New User Information
-$Username = 'sweiss'
-$Password = '9#VSLoX^!sq^'
-$FirstName = 'Shari'
-$LastName = 'Weiss'
-$Email = 'sweiss@g100.com'
-$Title = 'Business Development Coordinator'
-$Phone = '212-899-6830'
-$Department = 'Ext 16830'
-$Office = 'NY'
-$Company = 'G100 Network'
-$OU = 'OU=G100 Employees,DC=sigma,DC=com'
+$Username = 'tsavard'
+$Password = 'thPUsYD#oH6L'
+$FirstName = 'Timothy'
+$LastName = 'Savard'
+$Email = 'tsavard@miles-group.com'
+$Title = 'Executive Assistant'
+$Phone = '212-899-6930'
+$Department = 'Ext 16930'
+$Office = 'New York'
+$Company = 'The Miles Group'
+$OU = 'OU=The Miles Group,DC=sigma,DC=com'
 
 if (Get-ADUser -F {SamAccountName -eq $UserName})
 {

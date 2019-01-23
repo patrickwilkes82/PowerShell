@@ -2,7 +2,7 @@
 Import-Module ActiveDirectory
 
 # ***VARIABLES***
-$Username = 'wlerner'
+$Username = 'mdowgala'
 $Password = 'ZAQ!2wsxCDE#56'
 
 try {
