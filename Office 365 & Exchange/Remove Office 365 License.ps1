@@ -1,9 +1,10 @@
 # ***Connect to Office 365***
 $Creds = Get-Credential "admin.onepath@g100companies.com"
-$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.outlook.com/powershell/ -Credential $Creds -Authentication Basic –AllowRedirection
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.outlook.com/powershell/ -Credential $Creds -Authentication Basic -AllowRedirection
 Import-PSSession $Session
 
-Connect-MsolService
+Import-Module MSOnline
+Connect-MsolService -credential $Creds
 
 # ***VARIABLES***
 $mailbox = Read-Host 'Enter Email Address'

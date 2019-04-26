@@ -18,5 +18,5 @@ catch
 }
 
 # ***Verify Mailbox Type
-Start-Sleep -s 5
+Start-Sleep -s 10
 Get-Mailbox -Identity $mailbox | Format-List RecipientTypeDetails
