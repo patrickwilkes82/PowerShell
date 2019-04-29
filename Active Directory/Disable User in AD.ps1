@@ -2,7 +2,7 @@
 Import-Module ActiveDirectory
 
 # ***VARIABLES***
-$Username = 'pramprasad'
+$Username = Read-Host 'Please enter name of user to be Disabled'
 $Password = 'ZAQ!2wsxCDE#56'
 
 try {

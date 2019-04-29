@@ -11,14 +11,14 @@ $user = Read-Host 'Enter Email Address of User Gaining Access to Mailbox'
 #Run Code
 try {
 New-Mailbox -Shared -Name $name -DisplayName $name -PrimarySmtpAddress $mailbox
-Write-Host 'Shared Mailbox $mailbox Created Successfully'
+Write-Host 'Shared Mailbox $mailbox Created Successfully' -ForegroundColor Green
 Add-MailboxPermission -Identity $mailbox -User $user -AccessRights FullAccess
-Write-Host '$user Granted FullAccess Permissions to Shared Mailbox $mailbox'
+Write-Host '$user Granted FullAccess Permissions to Shared Mailbox $mailbox' -ForegroundColor Green
 Add-RecipientPermission -Identity $mailbox -Trustee $user -AccessRights SendAs
-Write-Host '$user Granted SendAs Permission to Shared Mailbox $mailbox'
+Write-Host '$user Granted SendAs Permission to Shared Mailbox $mailbox' -ForegroundColor Green
 }
 catch {
-    Write-Host 'Error Occurred please check for any spelling errors'
+    Write-Host 'Error Occurred please check for any spelling errors' -ForegroundColor Red
 }
 Get-PSSession | Remove-PSSession
 Write-Host 'PS Session Removed'
