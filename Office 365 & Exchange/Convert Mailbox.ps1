@@ -20,3 +20,5 @@ catch
 # ***Verify Mailbox Type
 Start-Sleep -s 10
 Get-Mailbox -Identity $mailbox | Format-List RecipientTypeDetails
+
+Get-PSSession | Remove-PSSession

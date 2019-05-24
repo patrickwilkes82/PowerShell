@@ -25,3 +25,5 @@ catch {
 
 # ***Verify licenses have been Removed and sign in blocked***
 Get-MsolUser -UserPrincipalName $mailbox | Format-List DisplayName,Licenses
+
+Get-PSSession | Remove-PSSession

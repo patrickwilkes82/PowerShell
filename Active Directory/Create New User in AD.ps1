@@ -19,7 +19,7 @@ $OUG100CServices = 'OU=Service Accounts,OU=G100 Companies,DC=sigma,DC=com'
 
 $OUG100NICs = 'OU=ICs,OU=G100 Employees,DC=sigma,DC=com'
 $OUG100NGhosts = 'OU=Shadow Accounts,OU=G100 Employees,DC=sigma,DC=com'
-$OUG100NInterns = 'OU=Interns,OU=G100 Employees,DC=sigma,DC=com'
+$OUG100NInterns = 'OU=G100 Interns,OU=G100 Employees,DC=sigma,DC=com'
 $OUG100NServices = 'OU=G100 Service Accounts,OU=G100 Employees,DC=sigma,DC=com'
 
 $OUTMGInterns = 'OU=Interns,OU=The Miles Group,DC=sigma,DC=com'
@@ -40,17 +40,17 @@ Import-Module ActiveDirectory
 Add-Type -AssemblyName system.web
 
 #Set New User Information
-$Username = 'pwilkes82'
+$Username = 'ipatel'
 $Password = [system.web.security.membership]::GeneratePassword(12,2)
-$FirstName = 'Patrick'
-$LastName = 'Wilke'
-$Email = 'pwilkes82@g100.com'
-$Title = 'Test'
-$Phone = 'TBD'
+$FirstName = 'Imtiaz'
+$LastName = 'Patel'
+$Email = 'ipatel@ssaandco.com'
+$Title = 'IC'
+$Phone = 'N/A'
 $Department = 'N/A'
 $Office = 'New York'
-$Company = 'G100 Companies'
-$OU = $OUG100CInterns
+$Company = 'SSA And Company'
+$OU = $OUSSAICs
 
 
 if (Get-ADUser -F {SamAccountName -eq $UserName})
