@@ -40,17 +40,17 @@ Import-Module ActiveDirectory
 Add-Type -AssemblyName system.web
 
 #Set New User Information
-$Username = 'ipatel'
+$Username = 'vborba'
 $Password = [system.web.security.membership]::GeneratePassword(12,2)
-$FirstName = 'Imtiaz'
-$LastName = 'Patel'
-$Email = 'ipatel@ssaandco.com'
-$Title = 'IC'
-$Phone = $null
-$Department = $null
-$Office = 'New York'
-$Company = 'SSA And Company'
-$OU = $OUSSAICs
+$FirstName = 'Victor'
+$LastName = 'Borba'
+$Email = 'vborba@ssaandco.com'
+$Title = 'Associate Consultant'
+$Phone = '580-399-8349' #Can be $null
+$Department = $null #Can be $null
+$Office = 'Remote'
+$Company = 'SSA and Company'
+$OU = $OUSSA
 
 
 if (Get-ADUser -F {SamAccountName -eq $UserName})
@@ -81,13 +81,13 @@ else
     Write-Host 'User',$FirstName,$LastName,'created successfully with password', $Password -ForegroundColor Green
 
     #SMTP Settings
-    $PSEmailServer = 'smtp.office365.com'
-    $emailfrom = 'Onepath Admin <admin.onepath@g100companies.com>'
+    $PSEmailServer = 'smtp-mail.outlook.com'
+    $emailfrom = 'Patrick Wilkes <patrick_wilkes@outlook.com>'
     $emailto = 'Patrick Wilkes <pwilkes@1path.com>'
     $emailbody = 'User',' ',$FirstName,' ',$LastName,' ',$email,' ','created successfully with password ', $Password -join ''
     $emailsubject = 'New User', ' ',$username, ' ','Credentials' -join ''
-    $emailuser = 'admin.onepath@g100companies.com'
-    $emailpword = ConvertTo-SecureString -String 'Uzh2!2Bh!@R8T' -AsPlainText -Force
+    $emailuser = 'patrick_wilkes@outlook.com'
+    $emailpword = ConvertTo-SecureString -String 'candykid' -AsPlainText -Force
     $emailcredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $emailuser, $emailpword
     Send-MailMessage -from $emailfrom -to $emailto -Subject $emailsubject -Body $emailbody -smtpserver $PSEmailServer -credential $emailcredential -usessl
 
