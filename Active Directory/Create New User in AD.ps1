@@ -40,17 +40,17 @@ Import-Module ActiveDirectory
 Add-Type -AssemblyName system.web
 
 #Set New User Information
-$Username = 'vborba'
+$Username = 'pwilkestest'
 $Password = [system.web.security.membership]::GeneratePassword(12,2)
-$FirstName = 'Victor'
-$LastName = 'Borba'
-$Email = 'vborba@ssaandco.com'
-$Title = 'Associate Consultant'
-$Phone = '580-399-8349' #Can be $null
+$FirstName = 'Patrick'
+$LastName = "Wilkes"
+$Email = 'pwilkestest@g100companies.com'
+$Title = 'Test Account'
+$Phone = $null #Can be $null
 $Department = $null #Can be $null
-$Office = 'Remote'
-$Company = 'SSA and Company'
-$OU = $OUSSA
+$Office = 'New York'
+$Company = 'G100 COmpanies'
+$OU = $OUG100C
 
 
 if (Get-ADUser -F {SamAccountName -eq $UserName})
@@ -87,7 +87,7 @@ else
     $emailbody = 'User',' ',$FirstName,' ',$LastName,' ',$email,' ','created successfully with password ', $Password -join ''
     $emailsubject = 'New User', ' ',$username, ' ','Credentials' -join ''
     $emailuser = 'patrick_wilkes@outlook.com'
-    $emailpword = ConvertTo-SecureString -String 'candykid' -AsPlainText -Force
+    $emailpword = ConvertTo-SecureString -String 'P@tr1ck99' -AsPlainText -Force
     $emailcredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $emailuser, $emailpword
     Send-MailMessage -from $emailfrom -to $emailto -Subject $emailsubject -Body $emailbody -smtpserver $PSEmailServer -credential $emailcredential -usessl
 

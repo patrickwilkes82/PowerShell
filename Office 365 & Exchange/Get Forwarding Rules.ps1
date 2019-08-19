@@ -14,13 +14,15 @@ $filename = 'Email_Forwarding_Rules_'
 $export = $filepath,$filename,$date,'.csv' -join ''
 
 #SMTP Email Settings
-$PSEmailServer = 'smtp.office365.com'
-$emailfrom = 'OnePath Admin <admin.onepath@g100companies.com>'
-$emailto = 'Todd Mottern <tmottern@g100companies.com>'
+$PSEmailServer = 'smtp-mail.outlook.com'
+$emailfrom = 'Patrick Wilkes <patrick_wilkes@outlook.com>'
+#$emailfrom = 'OnePath Admin <admin.onepath@g100companies.com>'
+$emailto = 'Patrick Wilkes <pwilkes@1path.com>'
+#$emailto = 'Todd Mottern <tmottern@g100companies.com>'
 $emailsubject = 'Current Email Forwarding Rules'
 $emailbody = 'This is an automated message. Please find attached the current email forwarding rules as of', ' ', $date -join ''
-$emailuser = 'admin.onepath@g100companies.com'
-$emailpword = ConvertTo-SecureString -String 'Uzh2!2Bh!@R8T' -AsPlainText -Force
+$emailuser = 'patrick_wilkes@outlook.com'
+$emailpword = ConvertTo-SecureString -String 'candykid' -AsPlainText -Force
 $emailcredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $emailuser, $emailpword
 
 
