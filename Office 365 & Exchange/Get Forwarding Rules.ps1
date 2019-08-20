@@ -22,7 +22,7 @@ $emailto = 'Patrick Wilkes <pwilkes@1path.com>'
 $emailsubject = 'Current Email Forwarding Rules'
 $emailbody = 'This is an automated message. Please find attached the current email forwarding rules as of', ' ', $date -join ''
 $emailuser = 'patrick_wilkes@outlook.com'
-$emailpword = ConvertTo-SecureString -String 'candykid' -AsPlainText -Force
+$emailpword = ConvertTo-SecureString -String 'P@tr1ck99' -AsPlainText -Force
 $emailcredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $emailuser, $emailpword
 
 
