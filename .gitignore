@@ -1,2 +1,2 @@
-#Ignore CSV File
-TMG Calendars.csv
+#Ignore CSV Files
+*.csv
