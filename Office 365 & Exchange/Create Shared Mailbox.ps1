@@ -15,7 +15,7 @@ Write-Host 'Shared Mailbox $mailbox Created Successfully' -ForegroundColor Green
 Add-MailboxPermission -Identity $mailbox -User $user -AccessRights FullAccess
 Write-Host '$user Granted FullAccess Permissions to Shared Mailbox $mailbox' -ForegroundColor Green
 Add-RecipientPermission -Identity $mailbox -Trustee $user -AccessRights SendAs
-Write-Host '$user Granted SendAs Permission to Shared Mailbox $mailbox' -ForegroundColor Green
+Write-Host $user ' Granted SendAs Permission to Shared Mailbox ' $mailbox -ForegroundColor Green
 }
 catch {
     Write-Host 'Error Occurred please check for any spelling errors' -ForegroundColor Red

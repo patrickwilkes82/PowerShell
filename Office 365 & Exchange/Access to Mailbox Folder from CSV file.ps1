@@ -4,8 +4,8 @@ $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri ht
 Import-PSSession $Session
 
 # ***Variables***
-$csv = 'C:\Users\admin.onepath\desktop\powershell\Office 365 & Exchange\csv\TMG Calendars.csv'
-$user = 'user1@domain.com'
+$csv = 'C:\Users\admin.onepath\Desktop\PowerShell\Office 365 & Exchange\csv\TMG Calendars.csv'
+$user = 'ttayob@miles-group.com'
 $rights = 'Editor'
 
 # ***EXECUTE***
