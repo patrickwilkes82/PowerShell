@@ -124,7 +124,7 @@ do
             Send-MailMessage -from $emailfrom -to $emailto -Subject $emailsubject -Body $emailbody -attachments $export -smtpserver $PSEmailServer -credential $emailcredential -usessl
      }  '7' {
             $ou = $OUAsia
-            $company = 'Inernational - Asia'
+            $company = 'International - Asia'
             $export = $filepath, $company, '_', $filename, '_', $date, '.csv' -join ""
             $emailsubject = $company, ' ', 'Active IC Report' -join ""
             
@@ -142,6 +142,5 @@ do
             Send-MailMessage -from $emailfrom -to $emailto -Subject $emailsubject -Body $emailbody -attachments $export -smtpserver $PSEmailServer -credential $emailcredential -usessl
      }
     }
-    pause
 }
 until ($selection -eq 'q')

@@ -15,6 +15,7 @@ $OUSSAServices = 'OU=Service Accounts,OU=Six Sigma Employees,DC=sigma,DC=com'
 
 $OUG100CGhosts = 'OU=Shadow Accounts,OU=G100 Companies,DC=sigma,DC=com'
 $OUG100CInterns = 'OU=Interns,OU=G100 Companies,DC=sigma,DC=com'
+$OUG100CICs = 'OU=G100 Companies ICs,OU=G100 Companies,DC=sigma,DC=com'
 $OUG100CServices = 'OU=Service Accounts,OU=G100 Companies,DC=sigma,DC=com'
 
 $OUG100NICs = 'OU=ICs,OU=G100 Employees,DC=sigma,DC=com'
@@ -32,6 +33,7 @@ $OUHLGGhosts =  'OU=Shadow Accounts,OU=Highlantern Group Employees,DC=sigma,DC=c
 $OUHLGServices =  'OU=HLG Service Accounts,OU=Highlantern Group Employees,DC=sigma,DC=com'
 $OUGCOA =  'OU=GCOA,OU=Highlantern Group Employees,DC=sigma,DC=com'
 
+$OUMentoreICs = 'OU=Mentore ICs,OU=Mentore,DC=sigma,DC=com'
 $OUMentoreServices = 'OU=Service Accounts,OU=Mentore,DC=sigma,DC=com'
 
 
@@ -40,17 +42,17 @@ Import-Module ActiveDirectory
 Add-Type -AssemblyName system.web
 
 #Set New User Information
-$Username = 'pwilkestest'
+$Username = 'aschatzmann'
 $Password = [system.web.security.membership]::GeneratePassword(12,2)
-$FirstName = 'Patrick'
-$LastName = "Wilkes"
-$Email = 'pwilkestest@g100companies.com'
-$Title = 'Test Account'
+$FirstName = 'Adam'
+$LastName = 'Schatzmann'
+$Email = 'aschatzmann@g100.com'
+$Title = 'Member Development Associate'
 $Phone = $null #Can be $null
 $Department = $null #Can be $null
 $Office = 'New York'
-$Company = 'G100 COmpanies'
-$OU = $OUG100C
+$Company = 'G100 Network'
+$OU = $OUG100N
 
 
 if (Get-ADUser -F {SamAccountName -eq $UserName})
@@ -65,7 +67,7 @@ else
     -Name "$FirstName $LastName" `
     -GivenName $FirstName `
     -Surname $LastName `
-    -DisplayName "$FirstName $LastName" `
+    -DisplayName "$FirstName $LastName"  `
     -UserPrincipalName $Email `
     -EmailAddress $Email `
     -OfficePhone $Phone `
