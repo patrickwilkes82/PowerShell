@@ -1,2 +1,4 @@
 #Ignore CSV Files
 *.csv
+
+#Ignore CSV FOlder
