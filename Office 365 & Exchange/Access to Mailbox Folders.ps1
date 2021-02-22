@@ -4,7 +4,7 @@ $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri ht
 Import-PSSession $Session
 
 # ***VARIABLES
-$mailbox = 'rcochran@miles-group.com:\Calendar' #Email address of user mailbox [Add ':\Calendar' or ':\Contacts' to grant access to specific mailbox folders]
+$mailbox = 'tgriffin@miles-group.com:\Contacts' #Email address of user mailbox [Add ':\Calendar' or ':\Contacts' to grant access to specific mailbox folders]
 $user = 'tsavard@miles-group.com' #Email of users mailbox being granted access 
 $rights = 'Editor' #Permissions to folder [FullAccess, Editor, ReadOnly, etc...]
 
